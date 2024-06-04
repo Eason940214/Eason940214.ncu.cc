@@ -1,0 +1,398 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Chatroom with Gemini API</title>
+    <style>
+        body {
+            color: white;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: #000;
+            /* Default background in case image doesn't load */
+        }
+
+        #backgroundWrapper {
+            width: 80vw;
+            /* Use viewport width units */
+            max-width: 800px;
+            /* Maximum width remains 800px */
+            height: 80vw;
+            /* Height is set to be the same in viewport width units, approximating the width */
+            max-height: 800px;
+            /* Maximum height to match the maximum width */
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            background-image: url('./img/giphy.jpg');
+            /* Replace with your image path */
+            background-size: contain;
+            /* Ensures the image is fully visible without stretching */
+            background-repeat: no-repeat;
+            background-position: center bottom;
+        }
+
+        #gameContainer {
+            width: 100%;
+            /* Takes the full width of the background wrapper */
+            height: 200px;
+            /* Adjusted height to position at the bottom of the image */
+            background: rgba(0, 0, 0, 0.8);
+            /* Semi-transparent black background */
+            padding: 10px;
+            display: none;
+            box-sizing: border-box;
+            border: 1px solid #fff;
+            overflow: hidden;
+        }
+
+        #messages {
+            height: 80%;
+            overflow-y: auto;
+            margin-bottom: 10px;
+        }
+
+        .message {
+            margin: 5px 0;
+        }
+
+        .userMessage {
+            color: #0f0;
+        }
+
+        .botMessage {
+            color: #ff0;
+        }
+
+        #messageInput {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            background: transparent;
+            border: none;
+            border-top: 1px solid #fff;
+            color: white;
+            font-size: 16px;
+        }
+
+        #startButton, #introButton {
+            padding: 15px 30px;
+            /* Increase padding for a better look */
+            font-size: 20px;
+            /* Adjust font size */
+            cursor: pointer;
+            /* Position it within the wrapper */
+            margin-bottom: 20px;
+            color: white;
+            /* Text color */
+            background: rgba(0, 0, 0, 0.8);
+            /* Same semi-transparent background as introBlock */
+            border: 1px solid #fff;
+            /* Same border as introBlock */
+            border-radius: 5px;
+            /* Rounded corners similar to introBlock */
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            /* Subtle shadow for depth */
+            transition: all 0.3s ease;
+            /* Smooth transition for hover effects */
+        }
+
+        #startButton:hover,
+        #introButton:hover {
+            background: rgba(0, 0, 0, 1);
+            /* Darker background on hover */
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.5);
+            /* Slightly larger shadow on hover */
+            transform: scale(1.05);
+            /* Slightly enlarge on hover */
+        }
+
+        #introBlock {
+            width: 80%;
+            max-width: 600px;
+            background: rgba(0, 0, 0, 0.8);
+            /* Semi-transparent background */
+            padding: 20px;
+            box-sizing: border-box;
+            border: 1px solid #fff;
+            margin-bottom: 20px;
+            /* Space between intro block and start button */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            display: none;
+            /* Initially hidden */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="introBlock">
+        <h2>歡迎來到《魔法世界》</h2>
+        <p>在《魔法世界》中，每一個選擇都將帶來不同的結果和體驗。你將扮演一位對於魔法充滿興趣的初學者，請幫助他渡過生活中的難關，選擇沒有對錯，這是一場純粹的體驗之旅，請享受在人際關係中的酸甜苦辣。</p>
+        <button id="startButton">Start Game</button>
+    </div>
+    <div id="backgroundWrapper">
+        <button id="introButton">遊戲介紹</button>
+        <div id="gameContainer">
+            <div id="messages"></div>
+            <form id="messageForm">
+                <input type="text" id="messageInput" placeholder="Type your command...">
+            </form>
+        </div>
+    </div>
+
+</body>
+<script>
+    var conversationHistory = [];
+
+    var apiKey = prompt("Please enter your API key:", "");
+    var userName = prompt("Please enter your name:", "");
+
+    if (!apiKey || !userName) {
+        alert("API key and name are required to use the chatroom.");
+        // Optionally, redirect or disable form
+    } else {
+        document.getElementById('messageForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            var inputElement = document.getElementById('messageInput');
+            var message = inputElement.value;
+
+            addToConversationHistory('user', message);
+            displayMessage(message, 'user');
+            inputElement.disabled = true;
+            fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=' + apiKey, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    "contents": conversationHistory,
+                    "safetySettings": [
+                        {
+                            "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+                            "threshold": "BLOCK_NONE"
+                        },
+                        {
+                            "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+                            "threshold": "BLOCK_NONE"
+                        },
+                    ],
+                    "generationConfig": {
+                        "stopSequences": [
+                            ""
+                        ],
+                        "temperature": 2.0,
+                        "maxOutputTokens": 2048,
+                        "topP": 0.8,
+                        "topK": 10
+                    }
+                })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    var responseText = data.candidates[0].content.parts[0].text;
+                    addToConversationHistory('model', responseText);
+                    displayMessage(responseText, 'bot');
+                    inputElement.disabled = false;
+                })
+                .catch(error => {
+                    console.error('Error:', error)
+                    inputElement.disabled = false;
+                });
+
+            document.getElementById('messageInput').value = '';
+        });
+    }
+
+    function addToConversationHistory(role, text) {
+        conversationHistory.push({
+            "role": role,
+            "parts": [{
+                "text": text
+            }]
+        });
+    }
+
+    function displayMessage(message, sender) {
+        var messageElement = document.createElement('div');
+        var formatMessage = formatText(message);
+        messageElement.classList.add('message');
+        if (sender === 'user') {
+            messageElement.classList.add('userMessage');
+        } else {
+            messageElement.classList.add('botMessage');
+        }
+        document.getElementById('messages').appendChild(messageElement);
+        updateSceneImage(message);
+        // Function to display the text one character at a time
+        function typeText(element, text, index) {
+            if (index < text.length) {
+                let char = text[index];
+                if (char === '<') {
+                    let endIndex = text.indexOf('>', index);
+                    if (endIndex !== -1) {
+                        element.innerHTML += text.substring(index, endIndex + 1);
+                        index = endIndex + 1;
+                    }
+                } else {
+                    element.innerHTML += char;
+                    index++;
+                }
+                setTimeout(function () {
+                    typeText(element, text, index);
+                }, 75); // Adjust typing speed by changing the delay (in milliseconds)
+            } else {
+                // Scroll to bottom after the entire message is displayed
+                document.getElementById('messages').scrollTop = document.getElementById('messages').scrollHeight;
+            }
+        }
+
+        // Start typing the formatted message
+        typeText(messageElement, formatMessage, 0);
+    }
+
+    function updateSceneImage(responseText) {
+        let sceneMatch = responseText.match(/場景：(.*?)\s/); // 使用正則表達式匹配場景描述
+        if (sceneMatch && sceneMatch[1]) {
+            let scene = sceneMatch[1];
+            console.log(scene);
+            // 檢查scene是否包含"小鎮廣場"
+            if (scene.includes("小鎮廣場")) {
+                document.getElementById('backgroundWrapper').style.backgroundImage = "url('./img/dorm.jpg')";
+            } else if (scene.includes("魔法森林")) {
+                document.getElementById('backgroundWrapper').style.backgroundImage = "url('./img/party.jpg')";
+            } else if (scene.includes("魔法訓練場")) {
+                document.getElementById('backgroundWrapper').style.backgroundImage = "url('./img/library.jpg')";
+            }
+        }
+    }
+
+    function formatText(text) {
+        // Replace ** with a new line and bold tag
+        let formattedText = text.replace(/\*\*(.*?)\*\*/g, '<br><strong>$1</strong>');
+
+        // Replace * with a new line and bullet point
+        formattedText = formattedText.replace(/\*(.*?)\s/g, '<br>$1');
+
+        return formattedText;
+    }
+
+    document.getElementById('introButton').addEventListener('click', function () {
+        document.getElementById('introBlock').style.display = 'block';
+        this.style.display = 'none'; // Hide the intro button
+        document.getElementById('startButton').style.display = 'block'; // Show the start button
+    });
+
+    document.getElementById('startButton').addEventListener('click', function () {
+        // Change background image and display settings when starting the game
+        document.getElementById('backgroundWrapper').style.backgroundImage = "url('./img/dorm.jpeg')";
+        document.getElementById('introBlock').style.display = 'none'; // Show the game container
+        document.getElementById('gameContainer').style.display = 'inline';
+        document.getElementById('introButton').style.display = 'none'; // Hide the start button
+
+        conversationHistory.push({
+            "role": 'user',
+            "parts": [{
+                "text": `腳本：
+                        """
+                        遊戲標題：魔奇少年
+                        遊戲背景
+                        ${userName}是一位剛搬到神秘小鎮的少年，試圖在這個充滿魔法和奇幻生物的新環境中找到自己的定位並結識朋友。遊戲通過亞歷克斯的互動和選擇來探索表達真實感受的重要性。
+
+                        主要角色：
+                        ${userName}：主角，內向的少年。
+                        莉娜：${userName}的新朋友，開朗活潑，對魔法有濃厚興趣。
+                        米婭：${userName}的同學，和且善於聆聽，擅長草藥和魔法研究。
+                        遊戲腳本流程
+
+                        開場：
+                        （場景：小鎮廣場）
+                        莉娜邀請${userName}參加周末的森林魔法聚會。
+                        選擇A：接受邀請。
+                        選擇B：婉拒，說自己有事情不能去。
+
+                        森林魔法上的互動：
+                        （場景：魔法森林）
+                        若選擇A，${userName}到達魔法森林，但感到不適。
+                         選擇A1：告訴傑米想要回家休息。 （選擇後進入魔法訓練場劇情）
+                         選擇A2：決定忍耐，不表達自己的感受。（選擇後進入魔法訓練場劇情）
+
+                        若選擇B，${userName}在宿舍休息，傑米回來時看起來很高興。
+                         選擇B1：詢問傑米魔法森林的情況。（選擇後進入魔法訓練場劇情）
+                         選擇B2：沒有表達興趣，繼續自己的事情。（選擇後進入魔法訓練場劇情）
+
+                         魔法訓練場：
+                        （場景：魔法訓練場）
+                        ${userName}和艾琳被分分配到同一個小組進行魔法實戰對練。
+                        ${userName}對艾琳的印象逐漸加深。
+                        選擇A：坦白對艾琳的好感。（選擇後進入結局，根據玩家的選擇進行反思及回顧）
+                        選擇B：保留自己的感情，不透露。（選擇後進入結局，根據玩家的選擇進行反思及回顧）
+
+                        結局：
+                        開放表達結局：如果${userName}選擇在關鍵時刻表達自己的感受（A1和A），他與傑米和艾琳的關係都將變得更加親密和真誠。傑米和艾琳對${userName}的坦率和開放表示欣賞和支持，從而建立起更深的情感聯繫。
+
+                        壓抑感受結局：如果${userName}選擇壓抑自己的感受（A2和B），則會感到孤立和不被理解。與傑米的關係因缺乏溝通而逐漸疏遠，而與艾琳的潛在關係也因為不敢開放表達而未能發展。
+
+                        遊戲結尾
+                        遊戲最後將根據${userName}的選擇提供一段反思，強調在人際關係中開放表達自己感受的重要性，以及這種溝通方式對個人和周圍人的影響。"""
+
+                        請根據腳本中的對話，根據"""開場"""到"""聚會上的互動"""最後到"""學業合作"""進行，開始一個文字冒險遊戲，每一次的對話，都需要呈現以下格式與資訊：
+                        <場景>：目前故事的背景為何
+                        <選擇>：在每一次的對話中，你都會根據腳本給我可以選擇的動作，根據我選擇的動作繼續接下來的劇情，整體劇情會圍繞腳本發展。
+
+                        根據我的選擇進行故事就好，不要幫我做出選擇`
+            }]
+        })
+        fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=' + apiKey, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                "contents": conversationHistory,
+                "safetySettings": [
+                    {
+                        "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+                        "threshold": "BLOCK_NONE"
+                    },
+                    {
+                        "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+                        "threshold": "BLOCK_NONE"
+                    },
+                ],
+                "generationConfig": {
+                    "stopSequences": [
+                        ""
+                    ],
+                    "temperature": 2.0,
+                    "maxOutputTokens": 2048,
+                    "topP": 0.8,
+                    "topK": 10
+                }
+            })
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log(conversationHistory);
+                var responseText = data.candidates[0].content.parts[0].text;
+                addToConversationHistory('model', responseText);
+                displayMessage(responseText, 'bot');
+            })
+            .catch(error => console.error('Error:', error));
+    });
+
+
+
+</script>
+
+</html>
