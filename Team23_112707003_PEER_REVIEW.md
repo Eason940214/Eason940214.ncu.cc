@@ -106,6 +106,7 @@ based on what you observed during the project (compare against the work allocati
 #### Did their actual contribution match the agreed work allocation?
 
 > *Your answer (Yes / Mostly / Partially / No — with explanation):*
+> > **Yes.** Despite the communication barriers we faced as a randomly formed team of strangers, actual contributions fully matched the final agreed work allocation. She delivered the foundational database schemas, authentication logic, and seeding pipelines on time and with high quality, ensuring the rest of the team had a stable database to work with.
 
 #### Peer rating for this teammate
 
