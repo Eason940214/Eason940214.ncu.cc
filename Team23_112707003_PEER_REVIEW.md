@@ -50,11 +50,12 @@ Be specific (e.g., "I designed all 12 tables in schema.sql and implemented query
 Describe any technical or collaboration difficulties you personally encountered and how you resolved them.
 
 > *Your answer:*
-> One of the major challenges was collaboration and team dynamics during the initial phase. Because the team members did not know each other beforehand, we faced a high communication barrier. 
-> 
-> Due to this lack of familiarity, our initial work allocation for the database implementation was poorly structured and somewhat uncoordinated. This resulted in a highly ambiguous ownership definition within the codebase; for instance, it was completely unclear who was primarily responsible for implementing the graph routing logic in `graph/queries.py`. This lack of clarity led to overlapping work, disjointed division of labor, and integration friction when we began coding the database functions.
-> 
-> To resolve this, I actively initiated a mid-project adjustment to recalibrate our project scope and clear up the ownership mess. I decided to step up and take full, independent ownership of the complex Task 6 extension track (Live Disruption & Adaptive Routing Engine) from scratch. This strategic realignment successfully decoupled my tasks from the ambiguous core query dependencies, allowing my teammates to focus entirely on stabilizing the core modules they had already started, which eliminated further collaboration friction and maximized team throughput.
+One of the major challenges was navigating the team dynamics as an individual stranger paired with two teammates who already had an established personal relationship. This created an immediate communication barrier and led to an initial work allocation that was poorly coordinated and lacked transparency.
+
+A specific technical difficulty arose within graph/queries.py. Although I actively contributed to implementing the graph routing logic, the existing social dynamic between my teammates meant that project alignment happened without my input, resulting in heavily compromised ownership definitions and duplicated code. This lack of clarity created severe integration friction when developing the Cypher queries.
+
+To resolve this deadlock, I initiated a mid-project adjustment to clear up the ownership mess. While continuing my contributions to the graph layer, I stepped up to take full, independent ownership of the complex Task 6 extension track from scratch. This successfully decoupled my primary deliverables from the ambiguous core dependencies, allowing the team to move forward without further friction.
+
 
 
 ---
