@@ -99,6 +99,9 @@ List the tasks, functions, files, or document sections that this teammate was th
 based on what you observed during the project (compare against the work allocation).
 
 > *Your answer:*
+> She was the primary author responsible for the foundational database architecture and theoretical documentation of the project. She successfully designed the core relational schema (`schema.sql` for Task 1) and implemented the complete PostgreSQL user authentication queries (`login_user`, `register_user`, and password security functions for Task 2d). She also built the primary data ingestion pipelines, specifically authoring the PostgreSQL seeding logic (`seed_postgres.py` for Task 3) and the Neo4j graph schema seeding architecture (`seed_neo4j.py` and `seed.cypher` for Task 4). 
+> 
+> For the **Design Document**, she authored the majority of the theoretical framework and design justifications, specifically delivering **Section 1** (ER Diagram), **Section 2** (Normalisation Justification), **Section 3** (Graph Database Design Rationale), and **Section 4** (Vector / RAG Design).
 
 #### Did their actual contribution match the agreed work allocation?
 
