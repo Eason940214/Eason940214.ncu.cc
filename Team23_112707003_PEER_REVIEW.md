@@ -112,11 +112,11 @@ based on what you observed during the project (compare against the work allocati
 
 | Criterion | Rating (1–5) | Justification (1–2 sentences) |
 |-----------|-------------|-------------------------------|
-| Delivered the tasks assigned in the work allocation |5 | |
-| Quality of their work was satisfactory |4 | |
-| Communicated well and kept the team informed |4 | |
-| Met deadlines agreed within the team |4 | |
-| **Overall rating for this teammate** |4 | |
+| Delivered the tasks assigned in the work allocation |5 |She fully delivered all foundational schema setups and database seeding files assigned to her. |
+| Quality of their work was satisfactory |4 |The structured data population and ingestion pipelines performed well during standard deployment tests. |
+| Communicated well and kept the team informed |4 |Communication was initially restricted by team unfamiliarity, but she maintained standard updates as coding progressed. |
+| Met deadlines agreed within the team |4 |She aligned her deliveries well with the team's schedule, ensuring no blocking issues on foundational code. |
+| **Overall rating for this teammate** |4 |She was a solid and responsible team member who provided a highly functional database infrastructure for the rest of our tasks. |
 
 #### Estimated contribution percentage for this teammate
 
