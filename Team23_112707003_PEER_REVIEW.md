@@ -181,7 +181,7 @@ Although we faced initial friction and a disjointed task allocation as a randoml
 ### D2. What would you do differently if you did this project again?
 
 > *Your answer (2–4 sentences):*
-
+If we did this project again, we would spend the first week executing a rigorous system requirement analysis and defining clear code ownership before writing any database scripts. Instead of developing modules in isolation as strangers, we should have collaboratively drafted a centralized database API contract and schema specification from day one. This would have completely prevented the ambiguous task overlapping and integration friction we suffered from during the initial phase.
 ---
 
 ### D3. Is there anything else the markers should know about team dynamics or individual contributions?
