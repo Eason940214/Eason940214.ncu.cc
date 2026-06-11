@@ -116,7 +116,7 @@ based on what you observed during the project (compare against the work allocati
 
 #### Estimated contribution percentage for this teammate
 
-> My estimate of their contribution: **____%**
+> My estimate of their contribution: **__50__%**
 
 ---
 
@@ -147,7 +147,7 @@ based on what you observed during the project (compare against the work allocati
 
 #### Estimated contribution percentage for this teammate
 
-> My estimate of their contribution: **____%**
+> My estimate of their contribution: **__25__%**
 
 ---
 
