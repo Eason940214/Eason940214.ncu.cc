@@ -163,9 +163,9 @@ All members (including yourself) must sum to 100%.
 
 | Member | Your estimated % | Notes |
 |--------|----------------|-------|
-| Yourself | % | |
-| Teammate 1 | % | |
-| Teammate 2 | % |  |
+| Yourself | 25% | |
+| Teammate 1 | 45% | |
+| Teammate 2 | 30% |  |
 | **Total** | **100%** | |
 
 ---
