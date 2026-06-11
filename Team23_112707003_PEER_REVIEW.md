@@ -65,8 +65,8 @@ Describe any technical or collaboration difficulties you personally encountered 
 |-----------|-------------|-------------------------------|
 | I delivered the tasks assigned to me in the work allocation | 4 |Despite the initial uncoordinated work allocation within the team, I fully delivered my adjusted coding responsibilities for the database project. |
 | The quality of my work was satisfactory | 3 | I successfully engineered advanced features like partial indexing and custom Neo4j path filtering that met all local runtime constraints. |
-| I communicated well and kept the team informed | 4 | I proactively flagged the code ownership issues early on and continually updated my teammates on my independent Task 6 progress via GitHub.|
-| I met deadlines agreed within the team | 4 |I completed all my implementation, testing, and documentation tracks ahead of the final deployment deadline. |
+| I communicated well and kept the team informed | 3 | I proactively flagged the code ownership issues early on and continually updated my teammates on my independent Task 6 progress via GitHub.|
+| I met deadlines agreed within the team | 3 |I completed all my implementation, testing, and documentation tracks ahead of the final deployment deadline. |
 | **Overall self-rating** | 4 |While I met standard expectations on regular tasks, I took the initiative to design and implement the complex Task 6 extension from scratch to actively pursue bonus point opportunities for the team. |
 
 ---
@@ -146,9 +146,9 @@ based on what you observed during the project (compare against the work allocati
 | Criterion | Rating (1–5) | Justification (1–2 sentences) |
 |-----------|-------------|-------------------------------|
 | Delivered the tasks assigned in the work allocation |4 |She successfully delivered the heavy transactional booking queries and relational modules assigned to her. |
-| Quality of their work was satisfactory | 4 |The core booking and cancellation features handled system transactions properly and maintained data integrity. |
+| Quality of their work was satisfactory | 3 |The core booking and cancellation features handled system transactions properly and maintained data integrity. |
 | Communicated well and kept the team informed | 3 |Due to initial team unfamiliarity, communication regarding code ownership was somewhat passive, though she kept pushing progress updates. |
-| Met deadlines agreed within the team | 4 | |
+| Met deadlines agreed within the team | 3 | |
 | **Overall rating for this teammate** | 4 | |
 
 #### Estimated contribution percentage for this teammate
