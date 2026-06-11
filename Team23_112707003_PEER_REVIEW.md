@@ -146,10 +146,10 @@ based on what you observed during the project (compare against the work allocati
 | Criterion | Rating (1–5) | Justification (1–2 sentences) |
 |-----------|-------------|-------------------------------|
 | Delivered the tasks assigned in the work allocation |4 |She successfully delivered the heavy transactional booking queries and relational modules assigned to her. |
-| Quality of their work was satisfactory | 3 |The core booking and cancellation features handled system transactions properly and maintained data integrity. |
-| Communicated well and kept the team informed | 3 |Due to initial team unfamiliarity, communication regarding code ownership was somewhat passive, though she kept pushing progress updates. |
-| Met deadlines agreed within the team | 3 | |
-| **Overall rating for this teammate** | 4 | |
+| Quality of their work was satisfactory | 3 |While the core write queries function correctly, initial integration tests revealed minor edge-case shortfalls that required subsequent team refinement. |
+| Communicated well and kept the team informed | 3 |Due to working as strangers initially, progress updates regarding the codebase were somewhat passive and less transparent during mid-project phases. |
+| Met deadlines agreed within the team | 3 |Some of her core business logic modules experienced minor delays, which temporarily extended our integration and testing timeline. |
+| **Overall rating for this teammate** | 4 |Despite minor shortfalls in communication and minor timeline delays, she remained a competent developer who successfully completed her primary core responsibilities. |
 
 #### Estimated contribution percentage for this teammate
 
