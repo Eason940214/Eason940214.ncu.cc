@@ -134,6 +134,8 @@ based on what you observed during the project (compare against the work allocati
 #### What did this teammate deliver?
 
 > *Your answer:*
+> > She was the primary developer responsible for implementing the complex relational business logic and core graph query features of the project. She successfully developed the entire suite of transactional write operations for **Task 2c**, specifically engineering the critical booking engine (`execute_booking`) and its rollback logic (`execute_cancellation`). She was also the primary author of **Task 2a and 2b**, coding essential PostgreSQL read-queries for rail availability, fares, seat mapping, and user profiles.
+> For the **Design Document**, she authored **Section 5** (AI Tool Usage Evidence) by compiling Examples 1 to 3, and completely drafted **Section 6** (Reflection & Trade-offs), evaluating the architecture's system design compromises.
 
 #### Did their actual contribution match the agreed work allocation?
 
