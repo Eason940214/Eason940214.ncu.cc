@@ -140,7 +140,7 @@ based on what you observed during the project (compare against the work allocati
 #### Did their actual contribution match the agreed work allocation?
 
 > *Your answer (Yes / Mostly / Partially / No — with explanation):*
-
+> **Mostly.** She successfully developed and delivered all the core transactional business logic and relational query modules assigned to her with great code quality. The only minor deviation was during the initial phase, where uncoordinated team planning led to an ambiguous overlap regarding ownership of `graph/queries.py`. However, this was resolved smoothly once we adjusted the project scope and reassigned tasks.
 #### Peer rating for this teammate
 
 | Criterion | Rating (1–5) | Justification (1–2 sentences) |
