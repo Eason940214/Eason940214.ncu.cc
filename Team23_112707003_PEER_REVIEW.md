@@ -175,7 +175,7 @@ All members (including yourself) must sum to 100%.
 ### D1. What went well in the team's collaboration?
 
 > *Your answer (2–4 sentences):*
-
+Although we faced initial friction and a disjointed task allocation as a randomly formed team of strangers, our mid-project scope adjustment went remarkably well. Once we realized the coding overlap in our core modules, the team demonstrated great agility by adapting to a newly decoupled workflow. Everyone highly respected the revised task boundaries, allowing my teammates to focus on stabilizing the primary queries while I independently spearheaded the Task 6 extension.
 ---
 
 ### D2. What would you do differently if you did this project again?
