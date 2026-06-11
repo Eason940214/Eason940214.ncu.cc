@@ -63,11 +63,11 @@ Describe any technical or collaboration difficulties you personally encountered 
 
 | Criterion | Rating (1–5) | Justification (1–2 sentences) |
 |-----------|-------------|-------------------------------|
-| I delivered the tasks assigned to me in the work allocation | 4 | |
-| The quality of my work was satisfactory | 4 | |
-| I communicated well and kept the team informed | 4 | |
-| I met deadlines agreed within the team | 4 | |
-| **Overall self-rating** | 5 | |
+| I delivered the tasks assigned to me in the work allocation | 4 |Despite the initial uncoordinated work allocation within the team, I fully delivered my adjusted coding responsibilities for the database project. |
+| The quality of my work was satisfactory | 4 | I successfully engineered advanced features like partial indexing and custom Neo4j path filtering that met all local runtime constraints. |
+| I communicated well and kept the team informed | 4 | I proactively flagged the code ownership issues early on and continually updated my teammates on my independent Task 6 progress via GitHub.|
+| I met deadlines agreed within the team | 4 |I completed all my implementation, testing, and documentation tracks ahead of the final deployment deadline. |
+| **Overall self-rating** | 5 |While I met standard expectations on regular tasks, I took the initiative to design and implement the complex Task 6 extension from scratch to actively pursue bonus point opportunities for the team. |
 
 ---
 
