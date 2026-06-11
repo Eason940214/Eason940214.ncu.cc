@@ -145,9 +145,9 @@ based on what you observed during the project (compare against the work allocati
 
 | Criterion | Rating (1–5) | Justification (1–2 sentences) |
 |-----------|-------------|-------------------------------|
-| Delivered the tasks assigned in the work allocation |5 | |
+| Delivered the tasks assigned in the work allocation |4 | |
 | Quality of their work was satisfactory | 4 | |
-| Communicated well and kept the team informed | 4 | |
+| Communicated well and kept the team informed | 3 | |
 | Met deadlines agreed within the team | 4 | |
 | **Overall rating for this teammate** | 4 | |
 
