@@ -62,11 +62,11 @@ Describe any technical or collaboration difficulties you personally encountered 
 
 | Criterion | Rating (1–5) | Justification (1–2 sentences) |
 |-----------|-------------|-------------------------------|
-| I delivered the tasks assigned to me in the work allocation | 4 |Despite the initial uncoordinated work allocation within the team, I fully delivered my adjusted coding responsibilities for the database project. |
-| The quality of my work was satisfactory | 3 | I successfully engineered advanced features like partial indexing and custom Neo4j path filtering that met all local runtime constraints. |
-| I communicated well and kept the team informed | 3 | I proactively flagged the code ownership issues early on and continually updated my teammates on my independent Task 6 progress via GitHub.|
-| I met deadlines agreed within the team | 3 |I completed all my implementation, testing, and documentation tracks ahead of the final deployment deadline. |
-| **Overall self-rating** | 4 |While I met standard expectations on regular tasks, I took the initiative to design and implement the complex Task 6 extension from scratch to actively pursue bonus point opportunities for the team. |
+| I delivered the tasks assigned to me in the work allocation | 4 |Despite the initial uncoordinated division of labor within the team, I fully delivered all my adjusted database functions and query modules. |
+| The quality of my work was satisfactory | 3 | My core Cypher code and Task 6 extension function properly, though initial cross-member integration was slightly compromised by overlapping logic. |
+| I communicated well and kept the team informed | 3 | Due to working as an individual stranger with two well-acquainted teammates, my progress updates faced minor communication barriers during the early phases.|
+| I met deadlines agreed within the team | 3 |Some of my early graph database implementations experienced minor timeline slippages due to the ambiguous ownership definitions within the repository. |
+| **Overall self-rating** | 4 |Despite experiencing minor shortfalls due to the challenging team environment, I managed to successfully execute both my core database assignments and the independent Task 6 extension track. |
 
 ---
 
