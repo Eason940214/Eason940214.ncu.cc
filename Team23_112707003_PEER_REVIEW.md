@@ -163,9 +163,9 @@ All members (including yourself) must sum to 100%.
 
 | Member | Your estimated % | Notes |
 |--------|----------------|-------|
-| Yourself | 25% | |
-| Teammate 1 | 45% | |
-| Teammate 2 | 30% |  |
+| Yourself | 25% |Task 6 加分功能實作、撰寫圖形資料庫、設計文件的理論論述（Sec 5-7） |
+| Teammate 1 | 45% |負責Seeding腳本撰寫、Neo4j演算法、協助修改queries、撰寫圖形資料庫、設計文件的理論論述（Sec 1-4） |
+| Teammate 2 | 30% | 主要負責PostgreSQL核心查詢模組、撰寫圖形資料庫、協助修改Seeding腳本撰寫、設計文件的理論論述（Sec 5-6） |
 | **Total** | **100%** | |
 
 ---
