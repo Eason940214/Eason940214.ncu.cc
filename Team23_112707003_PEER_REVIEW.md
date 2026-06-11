@@ -40,7 +40,9 @@ List the specific tasks, functions, files, or document sections that you were th
 Be specific (e.g., "I designed all 12 tables in schema.sql and implemented query_national_rail_availability and execute_booking").
 
 > *Your answer:*
-
+> In addition to leading the advanced extension track, I actively co-authored and implemented the core graph database (Neo4j) layer. For **Task 4 and Task 5**, I wrote and optimized essential Cypher query functions within `databases/graph/queries.py`, formulated path-traversal logic, and assisted in building the graph schema seeding pipeline (`seed_neo4j.py`). 
+> 
+> Furthermore, I was the primary author of **Task 6 (Optional Extension)**, where I independently designed and implemented the "Live Disruption & Adaptive Routing Engine." This involved creating the `station_disruptions` operational table with a production-grade partial index in PostgreSQL, as well as engineering the dynamic node isolation and adaptive routing mechanism using `apoc.algo.allSimplePaths` in Neo4j. I also authored the automated integration test script (`test_disruption.py`) and fully documented **Section 7** and **Section 5 (Examples 4-5)** of the Design Document.
 ---
 
 ### A2. What challenges did you face?
