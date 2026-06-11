@@ -190,7 +190,11 @@ This is optional. Use it only if there is important context that the ratings abo
 (e.g., a member had a documented personal emergency, or a member was unresponsive for a significant period).
 
 > *Your answer (or "Nothing to add"):*
-
+> One of the major challenges was navigating the team dynamics as an individual stranger paired with two teammates who already had an established personal relationship. This created an immediate communication barrier and led to an initial work allocation that was poorly coordinated and lacked transparency. 
+> 
+> A specific technical difficulty arose within `graph/queries.py`. Although I actively contributed to implementing the graph routing logic, the existing social dynamic between my teammates meant that project alignment happened without my input, resulting in heavily compromised ownership definitions and duplicated code. This lack of clarity created severe integration friction when developing the Cypher queries.
+> 
+> To resolve this deadlock, I initiated a mid-project adjustment to clear up the ownership mess. While continuing my contributions to the graph layer, I stepped up to take full, independent ownership of the complex Task 6 extension track from scratch. This successfully decoupled my primary deliverables from the ambiguous core dependencies, allowing the team to move forward without further friction.
 ---
 
 ## Declaration
