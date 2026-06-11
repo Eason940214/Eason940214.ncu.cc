@@ -52,9 +52,9 @@ Describe any technical or collaboration difficulties you personally encountered 
 > *Your answer:*
 > One of the major challenges was collaboration and team dynamics during the initial phase. Because the team members did not know each other beforehand, we faced a high communication barrier. 
 > 
-> Due to this lack of familiarity, our initial work allocation for the database implementation was poorly structured and somewhat uncoordinated. This resulted in a disjointed division of labor when we started coding the database functions and queries, creating integration friction. 
+> Due to this lack of familiarity, our initial work allocation for the database implementation was poorly structured and somewhat uncoordinated. This resulted in a highly ambiguous ownership definition within the codebase; for instance, it was completely unclear who was primarily responsible for implementing the graph routing logic in `graph/queries.py`. This lack of clarity led to overlapping work, disjointed division of labor, and integration friction when we began coding the database functions.
 > 
-> To resolve this, I actively initiated an mid-project adjustment to recalibrate our scope. I decided to step up and take full, independent ownership of the complex Task 6 extension track. This strategic realignment decoupled my tasks from the messy core query dependencies, allowing my teammates to focus entirely on finishing the core modules they had already started, which successfully minimized further collaboration friction.
+> To resolve this, I actively initiated a mid-project adjustment to recalibrate our project scope and clear up the ownership mess. I decided to step up and take full, independent ownership of the complex Task 6 extension track (Live Disruption & Adaptive Routing Engine) from scratch. This strategic realignment successfully decoupled my tasks from the ambiguous core query dependencies, allowing my teammates to focus entirely on stabilizing the core modules they had already started, which eliminated further collaboration friction and maximized team throughput.
 
 
 ---
