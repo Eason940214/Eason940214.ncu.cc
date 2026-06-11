@@ -63,11 +63,11 @@ Describe any technical or collaboration difficulties you personally encountered 
 
 | Criterion | Rating (1–5) | Justification (1–2 sentences) |
 |-----------|-------------|-------------------------------|
-| I delivered the tasks assigned to me in the work allocation | | |
-| The quality of my work was satisfactory | | |
-| I communicated well and kept the team informed | | |
-| I met deadlines agreed within the team | | |
-| **Overall self-rating** | | |
+| I delivered the tasks assigned to me in the work allocation | 4 | |
+| The quality of my work was satisfactory | 4 | |
+| I communicated well and kept the team informed | 4 | |
+| I met deadlines agreed within the team | 4 | |
+| **Overall self-rating** | 5 | |
 
 ---
 
